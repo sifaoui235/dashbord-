@@ -1,0 +1,120 @@
+/* Variables pour les thèmes */
+:root {
+  --primary-color: #28a745;
+  --secondary-color: #6c757d;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #17a2b8;
+  --light-bg: #f8f9fa;
+  --dark-bg: #343a40;
+  --light-text: #f8f9fa;
+  --dark-text: #343a40;
+  --border-radius: 0.375rem;
+  --box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --transition-speed: 0.3s;
+}
+
+/* Styles généraux */
+body {
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.light-mode {
+  background-color: var(--light-bg);
+  color: var(--dark-text);
+}
+
+.dark-mode {
+  background-color: var(--dark-bg);
+  color: var(--light-text);
+}
+
+/* Styles des cartes */
+.card {
+  transition: background-color var(--transition-speed), color var(--transition-speed), border-color var(--transition-speed);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-bottom: 1rem;
+}
+
+.card-header {
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+}
+
+/* Styles pour les alertes */
+.alert-card {
+  border-left: 4px solid var(--danger-color);
+}
+
+/* Animations */
+.fa-spin {
+  animation: fa-spin 2s infinite linear;
+}
+
+@keyframes fa-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Styles pour les graphiques */
+.chart-container {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
+
+/* Styles pour les widgets */
+.widget-card {
+  height: 100%;
+}
+
+/* Styles pour les badges */
+.badge {
+  font-weight: 500;
+  padding: 0.35em 0.65em;
+}
+
+/* Styles pour les valeurs en alerte */
+.alert-value {
+  color: var(--danger-color);
+  font-weight: bold;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Styles responsive */
+@media (max-width: 768px) {
+  .card-title {
+    font-size: 1.1rem;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Transitions fluides pour les changements de thème */
+.card, .btn, .navbar, .badge, .progress, .list-group-item {
+  transition: all var(--transition-speed) ease-in-out;
+}
